@@ -37,7 +37,6 @@ for x in range(N):
             mylist.reverse()
 
 
-
 '''
 Consider a list (list = []). You can perform the following commands:
 
