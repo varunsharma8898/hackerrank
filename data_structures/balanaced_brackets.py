@@ -30,22 +30,34 @@ def isBalanced(s):
 def isValid(s):
     mystack = []
     bracket_map = {
-        '[': ']',
-        '{': '}',
-        '(': ')'
+        ']': '[',
+        '}': '{',
+        ')': '('
     }
     for x in (s):
-        if not mystack:
+        if mystack and bracket_map.get(x) == mystack[-1]:
+            mystack.pop()
+        else:
             mystack.append(x)
-        elif bracket_map[]:
+        # if not mystack:
+        #     mystack.append(x)
+        # elif x in bracket_map:
+        #     mystack.append(x)
+        # else:
+        #     if x == bracket_map[mystack[-1]]:
+        #         mystack.pop()
+        #     else:
+        #         return "NO"
 
+    return "YES" if not mystack else "NO"
 
 
 if __name__ == "__main__":
     t = int(input().strip())
     for a0 in range(t):
         s = input().strip()
-        result = isBalanced(s)
+        # result = isBalanced(s)
+        result = isValid(s)
         print(result)
 
 """
